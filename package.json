@@ -1,0 +1,35 @@
+{
+  "name": "todo_app",
+  "version": "1.0.0",
+  "description": "todo app",
+  "main": "dal.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "busboy": "^0.2.14",
+    "express": "^4.15.4",
+    "express-validator": "^3.2.1",
+    "jest": "^20.0.4",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.5",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lepinem/todo.git"
+  },
+  "keywords": [
+    "todo",
+    "app"
+  ],
+  "author": "lepinem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lepinem/todo/issues"
+  },
+  "homepage": "https://github.com/lepinem/todo#readme"
+}
