@@ -1,0 +1,32 @@
+<!-- home.mustache -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>todo</title>
+    </head>
+    <body>
+        <form class="inputItem" action="/" method="post">
+            <input type="text" name="newThing" value='{{id}}' placeholder="New Item">
+              <!-- <button type="submit" name="addItem">Add item</button> -->
+        </form>
+        <div class="openItems">
+          <h2>Open Items</h2>
+          <ul>
+            {{#todoList}}
+                <li><p>{{id}}</p><p>{{task}}</p><button type='submit' value='{{id}}' name='closer'>Close Item</button></li>
+            {{/todoList}}
+          </ul>
+        </div>
+        <div class="closedItems">
+          <h2>Closed Items</h2>
+          <ul>
+            {{#closedList}}
+              <li><p>{{id}}</p><p>{{task}}</p><button type="submit" name="reEngage">Re-Open?</button></li>
+            {{/closedList}}
+          </ul>
+        </div>
+    </body>
+</html>
