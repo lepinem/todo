@@ -16,7 +16,8 @@
           <h2>Open Items</h2>
           <ul>
             {{#todoList}}
-                <li><p>{{id}}</p><p>{{task}}</p><button type='submit' value='{{id}}' name='closer'>Close Item</button></li>
+                <li><p>{{id}}</p><p>{{task}}</p><form class="" action="/{{id}}" method="post">
+                <button type='submit' value='{{id}}' name='closer'>Close Item</button></form></li>
             {{/todoList}}
           </ul>
         </div>

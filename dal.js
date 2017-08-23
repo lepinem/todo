@@ -1,7 +1,7 @@
 // dal.js
 // this file contains the functions needed to process user inputs
 
-const todo = require('./todo');
+let todo = require('./todo');
 const closed = require('./closed');
 
 //displays the todo list (open)

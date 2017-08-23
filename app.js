@@ -35,8 +35,9 @@ app.post('/', function(req, res){
   res.redirect('/');
 })
 
-app.delete('/', function (req, res){
-  listDal.removeItem(req.params.id);
+app.post('/:id', function (req, res){
+  console.log(req.params.id);
+  listDal.removeItem(+req.params.id);
     res.redirect('/');
 })
 
