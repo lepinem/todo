@@ -1,12 +1,12 @@
 // dal.js
 // this file contains the functions needed to process user inputs
-
 let todo = require('./todo');
-const closed = require('./closed');
+let open = require('./open');
+let closed = require('./closed');
 
 //displays the todo list (open)
-function getTodoList(itemId){
-  return todo.filter(function(item){
+function getOpenList(itemId){
+  return open.filter(function(item){
     return !item.close
   })
 }
@@ -14,41 +14,52 @@ function getTodoList(itemId){
 // adds a new item to the todo list
 function addItem(item){
   const newItem = {id:(todo.length + 1) + (closed.length), task: item, close:(false)};
-    todo.push(newItem);
-    return todo;
+    open.push(newItem);
+    return open;
 }
 
 //removes closed item from the open items list
 function closeItem(itemId){
-  todo.map(function(item){
+  closed.map(function(item){
     if(item.id == itemId){
       item.close = true;
+      // todo.shift(item);
       closed.push(item);
-      todo.shift(item);
+      return closed;
     }
-    console.log(closer);
+    // console.log(closer);
 })
 }
 
 //recalls the items marked as closed
 //do not use find, it returns only one - filter scans whole array
-function getClosedItems(){
+function getClosedItems(item){
   return closed;
 }
 
 // creates new todo array from open list minus items closed
 function removeItem(itemId){
-  const newTodo = todo.filter(function(item){
+  const newOpen = open.filter(function(item){
     return item.id !== itemId
   })
-  todo = newTodo;
-  return todo;
+  open = newOpen;
+  return open;
+}
+
+// reactivates closed item (moves from closed to open)
+function reactivateItem(itemId){
+  const newClosed = closed.filter(function(item){
+    return item.id = itemId
+  })
+  closed = newClosed;
+  return closed;
 }
 
 module.exports = {
-  getTodoList: getTodoList,
+  getOpenList: getOpenList,
   addItem: addItem,
   getClosedItems: getClosedItems,
   closeItem: closeItem,
-  removeItem: removeItem
+  removeItem: removeItem,
+  reactivateItem: reactivateItem
 }

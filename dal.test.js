@@ -6,6 +6,5 @@ describe ('dal test', function () {
     expect(dal.getTodoList().length).toBe(3)
     dal.addItem(newTodo)
     expect(dal.getTodoList().length).toBe(4)
-
   } )
 })

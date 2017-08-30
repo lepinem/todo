@@ -25,7 +25,9 @@
           <h2>Closed Items</h2>
           <ul>
             {{#closedList}}
-              <li><p>{{id}}</p><p>{{task}}</p><button type="submit" name="reEngage">Re-Open?</button></li>
+              <li><p>{{id}}</p><p>{{task}}</p><form class="lineButton" action="/{{id}}" method="post">
+
+              </form><button type="submit" name="reEngage">Re-Open?</button></li>
             {{/closedList}}
           </ul>
         </div>
