@@ -38,13 +38,13 @@ function getClosedItems(item){
 }
 
 // creates new todo array from open list minus items closed
-function removeItem(itemId){
-  const newOpen = open.filter(function(item){
-    return item.id !== itemId
-  })
-  open = newOpen;
-  return open;
-}
+// function removeItem(itemId){
+//   const newOpen = open.filter(function(item){
+//     return item.id !== itemId
+//   })
+//   open = newOpen;
+//   return open;
+// }
 
 // reactivates closed item (moves from closed to open)
 function reactivateItem(itemId){
@@ -53,6 +53,19 @@ function reactivateItem(itemId){
   })
   closed = newClosed;
   return closed;
+}
+
+function removeItem(itemId){
+  return open.map(function(item){
+    if(item.id == itemId){  // 2 parter this will assign false values to true
+      item.close = true // and if there is no completed value at all it makes a completed value and marks it true
+      console.log(item);
+      closed.push(item)
+      return item
+    } else {
+      return item
+    }
+  })
 }
 
 module.exports = {

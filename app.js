@@ -40,9 +40,10 @@ app.post('/:id', function(req, res){
   res.redirect('/');
 })
 
-app.post('/:id', function (req, res){
+app.post('/delete/:id', function (req, res){
   console.log(req.params.id);
-  listDal.removeItem(+req.params.id);
+  //listDal.closeItem(+req.params.id);
+  listDal.removeItem(req.params.id);
   res.redirect('/');
 })
 
@@ -51,6 +52,13 @@ app.post('/:id', function (req, res){
 //   listdal.reactivateItem(+req.params.uncheck.id);
 //   res.redirect('/');
 // })
+
+app.post('/:id', function (req, res){
+  console.log(req.params.id);
+  //listDal.closeItem(+req.params.id)
+  listDal.removeItem(req.params.id);
+  res.redirect('/');
+})
 
 
 //assign the localhost port
